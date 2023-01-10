@@ -3,7 +3,6 @@ const form = document.querySelector("form");
 const cityHeader = document.querySelector(".city");
 const error = document.querySelector(".error");
 const input = document.querySelector("input");
-const body = document.querySelector("body");
 const icon = document.querySelector(".weather-icon");
 
 async function getLondonData() {
