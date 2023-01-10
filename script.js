@@ -12,9 +12,10 @@ async function getLondonData() {
     { mode: "cors" }
   );
   const weatherData = await response.json();
-  cityHeader.textContent = "London";
+  cityHeader.textContent = `${weatherData.name} / ${weatherData.sys.country}`;
   degree.innerHTML = `${Math.round(weatherData.main.temp - 273.15)} &#8451;`;
   icon.innerHTML = `<img src="https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png"></img>`;
+  console.log(weatherData);
 }
 
 async function getSearchedData(city) {
@@ -24,9 +25,10 @@ async function getSearchedData(city) {
       { mode: "cors" }
     );
     const weatherData = await response.json();
-    cityHeader.textContent = weatherData.name;
+    cityHeader.textContent = `${weatherData.name} / ${weatherData.sys.country}`;
     degree.innerHTML = `${Math.round(weatherData.main.temp - 273.15)} &#8451;`;
     icon.innerHTML = `<img src="https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png"></img>`;
+    console.log(weatherData);
   } catch {
     error.textContent = "An error occurred. Check the city name";
   }
