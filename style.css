@@ -17,7 +17,7 @@ form {
 
 input {
   height: 40px;
-  width: 300px;
+  width: 400px;
   font-size: 16px;
   padding: 10px 15px;
   border-radius: 5px;
@@ -71,13 +71,26 @@ button {
   align-items: center;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 450px) {
   input {
+    width: 350px;
     font-size: 14px;
     padding: 5px 10px;
   }
 
   button {
     font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  input {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  input {
+    width: 250px;
   }
 }
