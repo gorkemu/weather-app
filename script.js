@@ -14,8 +14,7 @@ async function getLondonData() {
   const weatherData = await response.json();
   cityHeader.textContent = "London";
   degree.innerHTML = `${Math.round(weatherData.main.temp - 273.15)} &#8451;`;
-  icon.innerHTML = `<img src="http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png"></img>`;
-  console.log(weatherData);
+  icon.innerHTML = `<img src="https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png"></img>`;
 }
 
 async function getSearchedData(city) {
@@ -27,9 +26,7 @@ async function getSearchedData(city) {
     const weatherData = await response.json();
     cityHeader.textContent = weatherData.name;
     degree.innerHTML = `${Math.round(weatherData.main.temp - 273.15)} &#8451;`;
-    icon.innerHTML = `<img src="http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png"></img>`;
-
-    console.log(weatherData);
+    icon.innerHTML = `<img src="https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png"></img>`;
   } catch {
     error.textContent = "An error occurred. Check the city name";
   }
